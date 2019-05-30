@@ -1,5 +1,6 @@
 package com.test;
 
+import com.db.common.cache.LruCache;
 import com.db.common.config.AppRootConfig;
 import org.junit.After;
 import org.junit.Before;
@@ -18,6 +19,11 @@ public class TestBase {
     @Test
     public void textSpingFw() {
         System.out.println(atx);
+    }
+    @Test
+    public void testLruCache() {
+        LruCache lru = atx.getBean("lruCache",LruCache.class);
+        System.out.println(lru);
     }
     @After
     public void close() {
